@@ -1,0 +1,60 @@
+package com.packagemay;
+
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.firefox.FirefoxDriver;
+import org.openqa.selenium.support.ui.Select;
+
+public class Maven {
+
+	public static void main(String[] args)
+	{
+	
+		//Launch Browser
+		
+		//Launch Browser
+		
+	      WebDriver driver=new FirefoxDriver();
+	      
+	      //Maximise
+	      
+	      driver.manage().window().maximize();
+	      
+	      //url
+	      
+	      driver.get("http://122.175.8.158/ranford2");
+	
+	      driver.findElement(By.id("txtuId")).sendKeys("Admin");
+	      driver.findElement(By.id("txtPword")).sendKeys("Testing@");
+	      driver.findElement(By.xpath("//*[@id=\"login\"]")).click();
+	    
+	      driver.findElement(By.xpath("//img[@src='images/Branches_but.jpg']")).click();
+	      driver.findElement(By.xpath("//input[contains(@name,'BtnNewBR')]")).click();
+	      
+	      driver.findElement(By.id("txtbName")).sendKeys("mindqsyshydsrnagarkk");
+	      driver.findElement(By.id("txtAdd1")).sendKeys("srnagar");
+	      
+	      driver.findElement(By.id("txtZip")).sendKeys("12345");
+	      
+	      
+	      
+	      //Dropdown
+	      
+	      Select Ctry=new Select(driver.findElement(By.id("lst_counrtyU")));
+	      Ctry.selectByVisibleText("INDIA");
+	      
+	      new Select(driver.findElement(By.id("lst_stateI"))).selectByVisibleText("GOA");
+	      
+	      new Select(driver.findElement(By.id("lst_cityI"))).selectByVisibleText("GOA");
+	      
+	      driver.findElement(By.id("btn_insert")).click();
+	      
+	      //Alert
+	    
+       driver.switchTo().alert().accept();
+        
+		
+
+	}
+
+}
